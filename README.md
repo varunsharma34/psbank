@@ -2,6 +2,14 @@
 
 https://varunsharma34.github.io/psbank/
 
+# Tech Stack
+
+BE - Created GraphQL server using MongoDB Atlas
+FE - React + GraphQL CLient (i.e. graphql-request)
+Source control – Git
+CI/CD – Github
+Deployment – Github Pages
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
