@@ -7,18 +7,18 @@ const Loader = () => {
       <Grid
         item
         xs={12}
-        display='flex'
+        // display='flex'
         justifyContent='center'
         sx={{ marginTop: '20px' }}
       >
-        <Grid item xs={12}>
-          <Skeleton height={60} />
-          <Skeleton animation='wave' />
-          <Skeleton animation={false} />
-          <Skeleton />
-          <Skeleton animation='wave' />
-          <Skeleton animation={false} />
-        </Grid>
+        {/* <Grid item xs={12}> */}
+        <Skeleton height={60} />
+        <Skeleton animation='wave' />
+        <Skeleton animation={false} />
+        <Skeleton />
+        <Skeleton animation='wave' />
+        <Skeleton animation={false} />
+        {/* </Grid> */}
       </Grid>
     </Container>
   );

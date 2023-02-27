@@ -1,4 +1,4 @@
-import { Typography, Paper, Skeleton, Grid, Link } from '@mui/material';
+import { Typography, Paper, Link } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { CURRENCY_SYMBOL } from '../../../realm/constants';
 

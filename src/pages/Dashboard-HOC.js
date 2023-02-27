@@ -6,7 +6,6 @@ import RecentTransactions from '../components/organisms/recent-transactions';
 import UpcomingTransactions from '../components/organisms/upcoming-transactions';
 import getDashboardDataAPI from '../graphql/getDashboardDataAPI';
 import { UserContext } from '../contexts/user.context';
-import { AccountSummarySkeleton } from '../components/molecules/account-summary';
 import { Alert } from '@mui/material';
 import Loader from '../components/atoms/loader';
 

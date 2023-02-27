@@ -1,15 +1,19 @@
 import { CssBaseline, Toolbar } from '@mui/material';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import NavBar from './components/NavBar.component';
+// import Loader from './components/atoms/loader';
+import PageContainer from './components/molecules/container';
 import Navigation from './components/organisms/navigation';
 import { UserProvider } from './contexts/user.context';
-import PageNotFound from './pages/ErrorPage';
-import DashboardHOC from './pages/Dashboard-HOC';
-import Login from './pages/Login';
-import PrivateRoute from './pages/PrivateRoute';
-import Signup from './pages/Signup';
-import AccountPage from './pages/AccountPage';
-import CardPage from './pages/CardPage';
+
+const PageNotFound = lazy(() => import('./pages/ErrorPage'));
+const DashboardHOC = lazy(() => import('./pages/Dashboard-HOC'));
+const Login = lazy(() => import('./pages/Login'));
+const PrivateRoute = lazy(() => import('./pages/PrivateRoute'));
+const Signup = lazy(() => import('./pages/Signup'));
+const AccountPage = lazy(() => import('./pages/AccountPage'));
+const CardPage = lazy(() => import('./pages/CardPage'));
+// const Loader = lazy(() => import('./components/atoms/loader'));
 
 function App() {
   return (
@@ -21,21 +25,21 @@ function App() {
         <Navigation />
         <Toolbar />
 
-        <Routes>
-          <Route path='*' element={<PageNotFound />} />
-          <Route exact path='/login' element={<Login />} />
-          <Route exact path='/signup' element={<Signup />} />
+        <Suspense fallback={<PageContainer>{/* <Loader /> */}</PageContainer>}>
+          <Routes>
+            <Route path='*' element={<PageNotFound />} />
+            <Route exact path='/login' element={<Login />} />
+            <Route exact path='/signup' element={<Signup />} />
 
-          {/* We are protecting our Home Page from unauthenticated */}
-          {/* users by wrapping it with PrivateRoute here. */}
-          <Route element={<PrivateRoute />}>
-            <Route exact path='/' element={<DashboardHOC />} />
-            <Route exact path='/account/:id' element={<AccountPage />} />
-            <Route exact path='/card/:id' element={<CardPage />} />
-            {/* <Route exact path='/new' element={<CreateAccount />} />
-            <Route exact path='/analytics' element={<Analytics />} /> */}
-          </Route>
-        </Routes>
+            {/* We are protecting our Home Page from unauthenticated */}
+            {/* users by wrapping it with PrivateRoute here. */}
+            <Route element={<PrivateRoute />}>
+              <Route exact path='/' element={<DashboardHOC />} />
+              <Route exact path='/account/:id' element={<AccountPage />} />
+              <Route exact path='/card/:id' element={<CardPage />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </UserProvider>
     </BrowserRouter>
   );

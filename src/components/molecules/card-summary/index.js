@@ -1,4 +1,4 @@
-import { Typography, Paper, Skeleton, Grid } from '@mui/material';
+import { Typography, Paper, Grid } from '@mui/material';
 import { CURRENCY_SYMBOL } from '../../../realm/constants';
 
 const CardSummary = ({ data }) => {
