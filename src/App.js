@@ -1,7 +1,7 @@
 import { CssBaseline, Toolbar } from '@mui/material';
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import Loader from './components/atoms/loader';
+
 import PageContainer from './components/molecules/container';
 import Navigation from './components/organisms/navigation';
 import { UserProvider } from './contexts/user.context';
@@ -25,7 +25,7 @@ function App() {
         <Navigation />
         <Toolbar />
 
-        <Suspense fallback={<PageContainer>{/* <Loader /> */}</PageContainer>}>
+        <Suspense fallback={<PageContainer></PageContainer>}>
           <Routes>
             <Route path='*' element={<PageNotFound />} />
             <Route exact path='/login' element={<Login />} />
