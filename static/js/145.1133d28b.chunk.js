@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpsbank=self.webpackChunkpsbank||[]).push([[145],{3145:function(e,n,t){t.r(n);var s=t(2791),a=t(7689),u=t(9526),c=t(184);n.default=function(e){var n=(0,s.useContext)(u.S).user,t=(0,a.TH)();return n?(0,c.jsx)(a.j3,{}):(0,c.jsx)(a.Fg,{to:"/login?redirectTo=".concat(encodeURI(t.pathname))})}}}]);
+//# sourceMappingURL=145.1133d28b.chunk.js.map
