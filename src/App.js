@@ -13,7 +13,6 @@ const PrivateRoute = lazy(() => import('./pages/PrivateRoute'));
 const Signup = lazy(() => import('./pages/Signup'));
 const AccountPage = lazy(() => import('./pages/AccountPage'));
 const CardPage = lazy(() => import('./pages/CardPage'));
-// const Loader = lazy(() => import('./components/atoms/loader'));
 
 function App() {
   return (
