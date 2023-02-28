@@ -1,18 +1,18 @@
 # Live Site URL
 
-https://varunsharma34.github.io/psbank/
+https://main--stately-kleicha-63e621.netlify.app/
 
 # Tech Stack
 
-BE - Created GraphQL server using MongoDB Atlas
+BE - Created GraphQL Server using MongoDB Atlas.
 
-FE - React + GraphQL CLient (i.e. graphql-request)
+FE - React, GraphQL Client (i.e. graphql-request), React Hook Form, Material UI.
 
-Source control – Git
+Source Control – Github
 
-CI/CD – Github
+Continous Integration – Github
 
-Deployment – Github Pages
+Continous Deployment – Netlify
 
 # Getting Started with Create React App
 
