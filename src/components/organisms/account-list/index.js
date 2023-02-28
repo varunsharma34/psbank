@@ -1,17 +1,15 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../../contexts/user.context';
 import { Box, Button, Grid, Typography, Paper, Alert } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import AccountCard from '../../molecules/account-card';
 import CreateAccount from '../../molecules/create-account';
-import getAccountsAPI from '../../../graphql/getAccountsAPI';
 import createAccountAPI from '../../../graphql/createAccountAPI';
 
 const AccountList = ({ data }) => {
   const [openCreateAccountModal, setOpenCreateAccountModal] = useState(false);
   // Fetching user details from UserContext
   const { user } = useContext(UserContext);
-  // console.log(user.customData);
   const [accounts, setAccounts] = useState(data);
 
   // const [accounts, setAccounts] = useState([]);
@@ -21,28 +19,6 @@ const AccountList = ({ data }) => {
   // To prove that the identity of the user, we are attaching
   // an Authorization Header with the request
   const headers = { Authorization: `Bearer ${user._accessToken}` };
-
-  // const loadAccounts = async () => {
-  //   const data = await getAccountsAPI({ headers });
-
-  //   setAccounts((_) =>
-  //     data.accounts.map((account) => ({
-  //       ...account,
-  //       key: account._id,
-  //       afterUpdate,
-  //     }))
-  //   );
-  //   setAccountsLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   loadAccounts();
-  // }, []);
-
-  // // Helper function to be performed after an account has been created.
-  // const afterUpdate = () => {
-  //   loadAccounts();
-  // };
 
   const handleModalClose = () => {
     setOpenCreateAccountModal(!openCreateAccountModal);
