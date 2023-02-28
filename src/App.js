@@ -22,6 +22,8 @@ function App() {
       <UserProvider>
         <CssBaseline />
         <Navigation />
+
+        {/* For spacing purpose */}
         <Toolbar />
 
         <Suspense fallback={<PageContainer></PageContainer>}>
@@ -39,6 +41,9 @@ function App() {
             </Route>
           </Routes>
         </Suspense>
+
+        {/* For spacing purpose */}
+        <Toolbar />
       </UserProvider>
     </BrowserRouter>
   );

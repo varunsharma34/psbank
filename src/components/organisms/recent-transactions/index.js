@@ -1,4 +1,4 @@
-import { Box, Typography, Paper } from '@mui/material';
+import { Box, Typography, Paper, Grid, Alert } from '@mui/material';
 import Transactions from '../../molecules/transactions';
 import { TransactionTableHeadings } from '../../../realm/constants';
 
@@ -17,7 +17,13 @@ const RecentTransactions = ({ data }) => {
           Recent transactions
         </Typography>
       </Paper>
-      <Transactions data={data} tableHeadings={TransactionTableHeadings} />
+      {data.length ? (
+        <Transactions data={data} tableHeadings={TransactionTableHeadings} />
+      ) : (
+        <Grid item xs={12}>
+          <Alert severity='error'>No transactions data found!</Alert>
+        </Grid>
+      )}
     </Box>
   );
 };

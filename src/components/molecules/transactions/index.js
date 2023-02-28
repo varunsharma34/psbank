@@ -71,7 +71,7 @@ const Transactions = ({ data, tableHeadings }) => {
               </TableHead>
             )}
             <TableBody>
-              {data.length &&
+              {data.length ? (
                 data
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((row) => {
@@ -99,7 +99,12 @@ const Transactions = ({ data, tableHeadings }) => {
                         <StyledTableCell>{createdOn}</StyledTableCell>
                       </StyledTableRow>
                     );
-                  })}
+                  })
+              ) : (
+                <StyledTableRow hover tabIndex={-1}>
+                  <TableCell colSpan={5}>No data</TableCell>
+                </StyledTableRow>
+              )}
               {emptyRows > 0 && (
                 <TableRow>
                   <TableCell colSpan={6} />
