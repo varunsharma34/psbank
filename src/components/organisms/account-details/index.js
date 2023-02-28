@@ -34,14 +34,12 @@ const AccountDetail = () => {
   const loadAccount = async () => {
     const data = await getAccountAPI({ queryVariables, headers });
 
-    console.log('accountdata: ', JSON.stringify(data));
-
     setAccount(data.account);
     setAccountLoading(false);
   };
 
   useEffect(() => {
-    loadAccount();
+    loadAccount(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleModalClose = () => {

@@ -2,6 +2,12 @@
 
 https://main--stately-kleicha-63e621.netlify.app/
 
+# GitHub Repository Link
+
+https://github.com/varunsharma34/psbank
+
+CI Workflow Name - Node.js CI
+
 # Tech Stack
 
 BE - Created GraphQL Server using MongoDB Atlas.

@@ -1,7 +1,7 @@
 import { Box, Container, Grid } from '@mui/material';
 import React from 'react';
 
-const PageContainer = ({ type = 'page', children }) => {
+const PageContainer = ({ type, children }) => {
   //   const theme = useTheme();
 
   return (
@@ -11,6 +11,10 @@ const PageContainer = ({ type = 'page', children }) => {
       </Grid>
     </Container>
   );
+};
+
+PageContainer.defaultProps = {
+  type: 'page',
 };
 
 export default PageContainer;

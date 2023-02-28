@@ -46,4 +46,8 @@ const AccountCard = ({ data }) => {
   );
 };
 
+AccountCard.defaultProps = {
+  data: {},
+};
+
 export default AccountCard;

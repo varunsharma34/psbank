@@ -13,8 +13,6 @@ const CardList = ({ data }) => {
   // console.log(user.customData);
   const [cards, setCards] = useState(data);
 
-  // const [cards, setCards] = useState([]);
-  // const [isCardsLoading, setCardsLoading] = useState(true);
   const [createCardApiError, setCreateCardApiError] = useState();
 
   // To prove that the identity of the user, we are attaching

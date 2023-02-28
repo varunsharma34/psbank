@@ -21,7 +21,7 @@ const CreateCard = ({
       (userIncome > 500000 || (userIncome < 500000 && userIncome > 200000))) ||
     0;
   const limit = userIncome > 500000 ? 150000 : 50000;
-  console.log(userIncome);
+
   return (
     <Modal isOpen={openCreateCardModal} handleClose={handleModalClose}>
       <DialogContent>

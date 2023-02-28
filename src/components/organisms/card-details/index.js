@@ -41,7 +41,7 @@ const CardDetail = () => {
   };
 
   useEffect(() => {
-    loadCard();
+    loadCard(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleModalClose = () => {

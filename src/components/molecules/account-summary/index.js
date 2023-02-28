@@ -1,4 +1,4 @@
-import { Typography, Paper, Skeleton, Grid } from '@mui/material';
+import { Typography, Paper, Grid } from '@mui/material';
 import { CURRENCY_SYMBOL } from '../../../realm/constants';
 
 const AccountSummary = ({ data }) => {
@@ -71,19 +71,8 @@ const AccountSummary = ({ data }) => {
   );
 };
 
-export const AccountSummarySkeleton = () => {
-  return (
-    <Grid item xs={12}>
-      <Skeleton />
-      <Skeleton animation='wave' />
-      <Skeleton animation={false} />
-      <Skeleton animation={false} />
-      <Skeleton />
-      <Skeleton animation='wave' />
-      <Skeleton animation={false} />
-      <Skeleton animation={false} />
-    </Grid>
-  );
+AccountSummary.defaultProps = {
+  data: {},
 };
 
 export default AccountSummary;

@@ -1,14 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {
-  TextField,
-  Container,
-  Grid,
-  Button,
-  Box,
-  Typography,
-  Alert,
-} from '@mui/material';
+import { TextField, Grid, Button, Typography, Alert } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import { UserContext } from '../contexts/user.context';
 import PageContainer from '../components/molecules/container';
@@ -69,7 +61,6 @@ const Login = () => {
       }
     } catch (error) {
       setApiError(error);
-      // alert(error);
     }
   };
 
@@ -95,11 +86,10 @@ const Login = () => {
                   label='Email'
                   variant='outlined'
                   name='email'
-                  //   style={{ marginBottom: '1rem' }}
                   error={!!errors['email']}
                   helperText={errors['email'] ? errors['email'].message : ''}
                   {...register('email', {
-                    required: 'Email is required', // JS only: <p>error message</p> TS only support string
+                    required: 'Email is required',
                   })}
                 />
               )}
@@ -123,7 +113,7 @@ const Login = () => {
                     errors['password'] ? errors['password'].message : ''
                   }
                   {...register('password', {
-                    required: 'Password is required', // JS only: <p>error message</p> TS only support string
+                    required: 'Password is required',
                   })}
                 />
               )}

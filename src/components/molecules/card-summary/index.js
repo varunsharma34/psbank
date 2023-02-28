@@ -121,4 +121,8 @@ const CardSummary = ({ data }) => {
   );
 };
 
+CardSummary.defaultProps = {
+  data: {},
+};
+
 export default CardSummary;
