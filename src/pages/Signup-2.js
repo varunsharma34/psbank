@@ -11,12 +11,14 @@ const Signup = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm();
+  } = useForm({ mode: 'all' });
   // const onSubmit = (data) => console.log('Submit:', data);
 
   const navigate = useNavigate();
   const location = useLocation();
   const [apiError, setApiError] = useState();
+
+  console.log('formData - ', errors);
 
   // As explained in the Login page.
   const { emailPasswordSignup } = useContext(UserContext);
@@ -89,6 +91,10 @@ const Signup = () => {
                   helperText={errors['email'] ? errors['email'].message : ''}
                   {...register('email', {
                     required: 'Email is required', // JS only: <p>error message</p> TS only support string
+                    pattern: {
+                      value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                      message: 'Invalid email',
+                    },
                   })}
                 />
               )}
@@ -112,7 +118,16 @@ const Signup = () => {
                     errors['password'] ? errors['password'].message : ''
                   }
                   {...register('password', {
-                    required: 'Password is required', // JS only: <p>error message</p> TS only support string
+                    required: 'Password is required',
+                    minLength: {
+                      value: 8,
+                      message: 'Minimum password length is 8',
+                    },
+                    maxLength: {
+                      value: 16,
+                      message: 'Maximum password length is 16',
+                    },
+                    pattern: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
                   })}
                 />
               )}

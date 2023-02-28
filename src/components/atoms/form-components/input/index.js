@@ -7,6 +7,7 @@ const FormInputField = ({
   label,
   type = 'text',
   required = false,
+  pattern,
   formstate,
   register,
 }) => {
@@ -28,6 +29,7 @@ const FormInputField = ({
           }
           {...register(name, {
             required, // JS only: <p>error message</p> TS only support string
+            pattern,
           })}
         />
       )}

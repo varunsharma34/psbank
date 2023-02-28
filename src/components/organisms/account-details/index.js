@@ -148,6 +148,8 @@ const AccountDetail = () => {
               display: 'flex',
               margin: '20px 0',
               backgroundColor: '#f9f9f9',
+              flexDirection: { xs: 'column', sm: 'row' },
+              gap: '10px',
             }}
           >
             <Typography variant='h5' sx={{ flex: '1' }}>

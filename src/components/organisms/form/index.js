@@ -5,7 +5,9 @@ import ReactHookFormSelect from '../../atoms/form-components/select';
 
 const Form = ({ data, formSubmitHandler, children }) => {
   const { formFields, submitButtonText = 'Submit' } = data;
-  const { register, handleSubmit, control, formState } = useForm();
+  const { register, handleSubmit, control, formState } = useForm({
+    mode: 'all',
+  });
 
   const onFormSubmit = (data) => {
     formSubmitHandler(data);
@@ -52,6 +54,7 @@ const Form = ({ data, formSubmitHandler, children }) => {
                   register={register}
                   formstate={formState}
                   required={field.required}
+                  pattern={field.pattern}
                 />
               </Grid>
             );

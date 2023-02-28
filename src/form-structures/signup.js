@@ -20,6 +20,10 @@ const SignupForm = {
         value: true,
         message: 'Email is required',
       },
+      pattern: {
+        value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+        message: 'Invalid email format',
+      },
       defaultValue: '',
     },
     {
@@ -29,6 +33,11 @@ const SignupForm = {
       required: {
         value: true,
         message: 'Password is required',
+      },
+      pattern: {
+        value:
+          /(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/,
+        message: `The password must contain uppercase, lowercase, nummeric and special characters. Password length must be greater than or equal to 8.`,
       },
       defaultValue: '',
     },
